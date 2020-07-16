@@ -38,7 +38,10 @@
                                     <constraint firstAttribute="width" constant="241" id="qIF-1s-Hbz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="acceptInputValue:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="0Kz-Iy-JMp"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zNP-mV-KUw">
                                 <rect key="frame" x="40" y="383" width="295" height="32"/>
@@ -52,6 +55,9 @@
                                     <segment title="20%"/>
                                     <segment title="Custom"/>
                                 </segments>
+                                <connections>
+                                    <action selector="selectPercentage:" destination="BYZ-38-t0r" eventType="valueChanged" id="rnE-cY-PMI"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip: $0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsu-XL-4Al">
                                 <rect key="frame" x="40" y="539" width="295" height="42"/>
@@ -83,14 +89,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jtc-Zj-yFX">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jtc-Zj-yFX">
                                 <rect key="frame" x="40" y="444" width="259" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="GIp-dZ-5eV"/>
                                     <constraint firstAttribute="height" constant="52" id="oxC-F4-phq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="acceptCustomPercentage:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="DLA-LC-WwU"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -114,6 +123,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="customPercentageValue" destination="Jtc-Zj-yFX" id="E3A-kO-Xgg"/>
+                        <outlet property="dollarSignLabel" destination="uwq-d0-spz" id="dpc-rP-J1a"/>
+                        <outlet property="inputValue" destination="wbq-rK-k8Z" id="W6d-Nl-CxK"/>
+                        <outlet property="percentageSelector" destination="zNP-mV-KUw" id="5F6-0w-WfV"/>
+                        <outlet property="percentageSignLabel" destination="Tyk-RT-hTd" id="9DT-Wx-aT9"/>
+                        <outlet property="tipValueLabel" destination="Wsu-XL-4Al" id="O4E-hB-A0v"/>
+                        <outlet property="titleLabel" destination="KdD-qL-QgM" id="WlA-LS-uE7"/>
+                        <outlet property="totalValueLabel" destination="YfH-Ry-RTY" id="6LU-PS-voe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
