@@ -15,6 +15,8 @@ class ViewController: UIViewController {
 	var tip_value = 0.00
 	var total_value = 0.00
 	
+	var activeTextField : UITextField? = nil
+	
 	
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var dollarSignLabel: UILabel!
@@ -63,6 +65,7 @@ class ViewController: UIViewController {
 		updateValues()
 	}
 	
+	
 	func hideCustomPercentage(value: Bool) {
 		customPercentageValue.isHidden = value
 		percentageSignLabel.isHidden = value
@@ -76,6 +79,7 @@ class ViewController: UIViewController {
 		totalValueLabel.text = "$" + String(format: "%.2f", total_value)
 	}
 	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -84,7 +88,14 @@ class ViewController: UIViewController {
 		
 		tip_percentage = 10.0
 		hideCustomPercentage(value: true)
+		
+		inputValue.delegate = self
+		customPercentageValue.delegate = self
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 	}
+	
 	
 	func updateColors() {
 		if #available(iOS 13.0, *) {
@@ -116,6 +127,7 @@ class ViewController: UIViewController {
 		}
 	}
 	
+	
 	func addDoneButtonOnKeyboards() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         doneToolbar.barStyle = .default
@@ -135,5 +147,42 @@ class ViewController: UIViewController {
         inputValue.resignFirstResponder()
 		customPercentageValue.resignFirstResponder()
     }
+	
+	@objc func keyboardWillShow(notification: NSNotification) {
+		
+		guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+			return
+		}
+
+		var shouldMoveViewUp = false
+
+		if let activeTextField = activeTextField {
+			let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+			let topOfKeyboard = self.view.frame.height - keyboardSize.height
+			if bottomOfTextField > topOfKeyboard {
+			  shouldMoveViewUp = true
+			}
+		}
+
+		if(shouldMoveViewUp) {
+			self.view.frame.origin.y = 0 - keyboardSize.height
+		}
+	}
+
+	@objc func keyboardWillHide(notification: NSNotification) {
+		if self.view.frame.origin.y != 0 {
+			self.view.frame.origin.y = 0
+		}
+	}
 }
 
+extension ViewController : UITextFieldDelegate {
+
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    self.activeTextField = textField
+  }
+
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    self.activeTextField = nil
+  }
+}
