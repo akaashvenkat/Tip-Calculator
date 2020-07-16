@@ -1,4 +1,4 @@
-# Counters
+# Tip Calculator
 Simple iOS application to gain more exposure to Swift. The app can be used to calculate the tip (and final total) amount for various tip percentages of a cost.
 - - - -
 
