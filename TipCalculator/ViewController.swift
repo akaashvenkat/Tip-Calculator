@@ -73,9 +73,36 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		updateColors()
 		addDoneButtonOnKeyboards()
+		
 		tip_percentage = 10.0
 		hideCustomPercentage(value: true)
+	}
+	
+	func updateColors() {
+		if #available(iOS 13.0, *) {
+			if self.traitCollection.userInterfaceStyle == .dark {
+				view.backgroundColor = UIColor.black
+				titleLabel.textColor = UIColor.white
+				dollarSignLabel.textColor = UIColor.white
+				inputValue.textColor = UIColor.white
+				customPercentageValue.textColor = UIColor.white
+				percentageSignLabel.textColor = UIColor.white
+				tipValueLabel.textColor = UIColor.red
+				totalValueLabel.textColor = UIColor.systemGreen
+			} else {
+				view.backgroundColor = UIColor.white
+				titleLabel.textColor = UIColor.black
+				dollarSignLabel.textColor = UIColor.black
+				inputValue.textColor = UIColor.black
+				customPercentageValue.textColor = UIColor.black
+				percentageSignLabel.textColor = UIColor.black
+				tipValueLabel.textColor = UIColor.blue
+				totalValueLabel.textColor = UIColor.systemGreen
+			}
+		}
 	}
 	
 	func addDoneButtonOnKeyboards() {

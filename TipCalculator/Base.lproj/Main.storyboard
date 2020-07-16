@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tip_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +31,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbq-rK-k8Z">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbq-rK-k8Z">
                                 <rect key="frame" x="94" y="245" width="241" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="E5r-r9-yeQ"/>
@@ -80,20 +80,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyk-RT-hTd">
-                                <rect key="frame" x="307" y="448" width="28" height="42"/>
+                                <rect key="frame" x="297" y="448" width="38" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="Ted-wh-3sY"/>
-                                    <constraint firstAttribute="width" constant="28" id="n9c-fN-Jyk"/>
+                                    <constraint firstAttribute="height" constant="42" id="4qE-dR-Zgw"/>
+                                    <constraint firstAttribute="width" constant="38" id="mOz-xF-4nP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jtc-Zj-yFX">
-                                <rect key="frame" x="40" y="444" width="259" height="52"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jtc-Zj-yFX">
+                                <rect key="frame" x="40" y="444" width="249" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="259" id="GIp-dZ-5eV"/>
-                                    <constraint firstAttribute="height" constant="52" id="oxC-F4-phq"/>
+                                    <constraint firstAttribute="height" constant="52" id="Ghu-jm-TbY"/>
+                                    <constraint firstAttribute="width" constant="249" id="lX4-7n-NQA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -104,22 +104,22 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Tyk-RT-hTd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="63" id="2ZP-xO-CR3"/>
                             <constraint firstItem="YfH-Ry-RTY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="221" id="8fv-Ki-JSx"/>
-                            <constraint firstItem="Jtc-Zj-yFX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="64" id="B7m-Bm-vzh"/>
                             <constraint firstItem="KdD-qL-QgM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-268.5" id="GGm-jo-gYE"/>
-                            <constraint firstItem="Tyk-RT-hTd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="133.5" id="TcA-Mo-XEI"/>
+                            <constraint firstItem="Jtc-Zj-yFX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-23" id="Rx4-xN-V1c"/>
+                            <constraint firstItem="Tyk-RT-hTd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="63" id="UVF-k1-E7V"/>
                             <constraint firstItem="zNP-mV-KUw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-7.5" id="Vm7-N4-94D"/>
+                            <constraint firstItem="Tyk-RT-hTd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="128.5" id="X28-OF-uNv"/>
                             <constraint firstItem="Wsu-XL-4Al" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="154" id="XE6-0G-VqX"/>
                             <constraint firstItem="wbq-rK-k8Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="27" id="bem-wl-CMH"/>
                             <constraint firstItem="uwq-d0-spz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-129" id="gHr-rq-x3R"/>
                             <constraint firstItem="KdD-qL-QgM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gtm-8q-0zd"/>
-                            <constraint firstItem="Jtc-Zj-yFX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-18" id="iqt-oY-4KM"/>
                             <constraint firstItem="zNP-mV-KUw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iv6-ES-4ha"/>
                             <constraint firstItem="wbq-rK-k8Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-129" id="mE9-Ax-sms"/>
                             <constraint firstItem="uwq-d0-spz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-133.5" id="ph4-bS-kLj"/>
                             <constraint firstItem="YfH-Ry-RTY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uxm-Fk-Amd"/>
                             <constraint firstItem="Wsu-XL-4Al" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ynb-sW-fIR"/>
+                            <constraint firstItem="Jtc-Zj-yFX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="64" id="zsh-0u-Oku"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
