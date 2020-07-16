@@ -15,14 +15,19 @@ class ViewController: UIViewController {
 	var tip_value = 0.00
 	var total_value = 0.00
 	
+	
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var dollarSignLabel: UILabel!
 	@IBOutlet weak var inputValue: UITextField!
+	@IBOutlet weak var tipHeaderLabel: UILabel!
 	@IBOutlet weak var percentageSelector: UISegmentedControl!
 	@IBOutlet weak var customPercentageValue: UITextField!
 	@IBOutlet weak var percentageSignLabel: UILabel!
+	@IBOutlet weak var tipTitleLabel: UILabel!
 	@IBOutlet weak var tipValueLabel: UILabel!
+	@IBOutlet weak var totalTitleLabel: UILabel!
 	@IBOutlet weak var totalValueLabel: UILabel!
+	
 	
 	@IBAction func acceptInputValue(_ sender: Any) {
 		base_value = Double(inputValue.text!) ?? 0.00
@@ -67,8 +72,8 @@ class ViewController: UIViewController {
 		tip_value = base_value * tip_percentage / 100
 		total_value = tip_value + base_value
 		
-		tipValueLabel.text = "Tip: $" + String(format: "%.2f", tip_value)
-		totalValueLabel.text = "Total: $" + String(format: "%.2f", total_value)
+		tipValueLabel.text = "$" + String(format: "%.2f", tip_value)
+		totalValueLabel.text = "$" + String(format: "%.2f", total_value)
 	}
 	
 	override func viewDidLoad() {
@@ -88,18 +93,24 @@ class ViewController: UIViewController {
 				titleLabel.textColor = UIColor.white
 				dollarSignLabel.textColor = UIColor.white
 				inputValue.textColor = UIColor.white
+				tipHeaderLabel.textColor = UIColor.white
 				customPercentageValue.textColor = UIColor.white
 				percentageSignLabel.textColor = UIColor.white
+				tipTitleLabel.textColor = UIColor.red
 				tipValueLabel.textColor = UIColor.red
+				totalTitleLabel.textColor = UIColor.systemGreen
 				totalValueLabel.textColor = UIColor.systemGreen
 			} else {
 				view.backgroundColor = UIColor.white
 				titleLabel.textColor = UIColor.black
 				dollarSignLabel.textColor = UIColor.black
 				inputValue.textColor = UIColor.black
+				tipHeaderLabel.textColor = UIColor.black
 				customPercentageValue.textColor = UIColor.black
 				percentageSignLabel.textColor = UIColor.black
+				tipTitleLabel.textColor = UIColor.blue
 				tipValueLabel.textColor = UIColor.blue
+				totalTitleLabel.textColor = UIColor.systemGreen
 				totalValueLabel.textColor = UIColor.systemGreen
 			}
 		}
