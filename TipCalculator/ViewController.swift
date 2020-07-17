@@ -29,6 +29,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var tipValueLabel: UILabel!
 	@IBOutlet weak var totalTitleLabel: UILabel!
 	@IBOutlet weak var totalValueLabel: UILabel!
+	@IBOutlet weak var clearButton: UIButton!
 	
 	
 	@IBAction func acceptInputValue(_ sender: Any) {
@@ -63,6 +64,22 @@ class ViewController: UIViewController {
 	@IBAction func acceptCustomPercentage(_ sender: Any) {
 		tip_percentage = Double(customPercentageValue.text!) ?? 0.0
 		updateValues()
+	}
+	
+	@IBAction func clearData(_ sender: Any) {
+		base_value = 0.00
+		tip_percentage = 10.0
+		tip_value = 0.00
+		total_value = 0.00
+		
+		inputValue.text = ""
+		inputValue.placeholder = "0.00"
+		percentageSelector.selectedSegmentIndex = 0
+		hideCustomPercentage(value: true)
+		customPercentageValue.text = ""
+		customPercentageValue.placeholder = "0"
+		tipValueLabel.text = "$0.00"
+		totalValueLabel.text = "$0.00"
 	}
 	
 	
@@ -111,6 +128,7 @@ class ViewController: UIViewController {
 				tipValueLabel.textColor = UIColor.red
 				totalTitleLabel.textColor = UIColor.systemGreen
 				totalValueLabel.textColor = UIColor.systemGreen
+				clearButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
 			} else {
 				view.backgroundColor = UIColor.white
 				titleLabel.textColor = UIColor.black
@@ -123,6 +141,7 @@ class ViewController: UIViewController {
 				tipValueLabel.textColor = UIColor.blue
 				totalTitleLabel.textColor = UIColor.systemGreen
 				totalValueLabel.textColor = UIColor.systemGreen
+				clearButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
 			}
 		}
 	}

@@ -131,6 +131,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ya-l2-bhY">
+                                <rect key="frame" x="156.66666666666666" y="718" width="62" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="8qE-oC-UU9"/>
+                                    <constraint firstAttribute="width" constant="62" id="XPx-lb-uHi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mnO-K3-a7Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -154,12 +168,15 @@
                             <constraint firstItem="quM-yN-6YQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-108.5" id="nO5-wl-jPP"/>
                             <constraint firstItem="quM-yN-6YQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="253" id="nUj-lA-jhi"/>
                             <constraint firstItem="uwq-d0-spz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-133.5" id="ph4-bS-kLj"/>
+                            <constraint firstItem="6Ya-l2-bhY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pvs-e2-FKo"/>
                             <constraint firstItem="xBJ-RC-fCy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-124.5" id="q4d-pT-f1d"/>
+                            <constraint firstItem="6Ya-l2-bhY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="329" id="tJO-HD-EZ1"/>
                             <constraint firstItem="zNP-mV-KUw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="16.5" id="yl6-2T-70H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="clearButton" destination="6Ya-l2-bhY" id="Crc-xD-a5Y"/>
                         <outlet property="customPercentageValue" destination="Jtc-Zj-yFX" id="E3A-kO-Xgg"/>
                         <outlet property="dollarSignLabel" destination="uwq-d0-spz" id="dpc-rP-J1a"/>
                         <outlet property="inputValue" destination="wbq-rK-k8Z" id="W6d-Nl-CxK"/>
